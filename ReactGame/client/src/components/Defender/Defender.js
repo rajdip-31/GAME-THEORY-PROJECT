@@ -81,7 +81,7 @@ function Defender({socket,roomId}) {
                     setMessage(event.target.value);
                 }}/>
 
-                <button className='test-btn' onClick={sendMessage}>Send</button>
+                <button className='test-btn' onClick={sendMessage}>SEND</button>
                 <h4>Message:</h4>
                 {messageRecieved}
                 </div>

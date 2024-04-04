@@ -85,7 +85,7 @@ export default function Quiz({socket,roomId,role,selected}) {
         return(
         <div className="quiz">
             <div className='quiz-area'>
-            <h1>QUIZ CORNER : </h1>
+            <h1>QUIZ CORNER</h1>
             <form onSubmit={handleQuizSubmit}>
                 {
                     questions.map((el,index)=>{
@@ -100,7 +100,7 @@ export default function Quiz({socket,roomId,role,selected}) {
                         );
                     })
                 }
-                <button type = "submit" disabled={isClicked}>Submit quiz</button>
+                <button type = "submit" disabled={isClicked}>SUBMIT QUIZ</button>
             </form>
             </div>
         </div>

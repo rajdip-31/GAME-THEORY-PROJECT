@@ -6,6 +6,9 @@
     
     height: 100vh;
 }
+h1{
+    font-size: 3em;
+}
 
 .choose-subject{
     font-size: 2em;
@@ -29,8 +32,14 @@ select{
 .quiz-area button{
     width: 150px;
     font-size: large;
-    margin: auto;
-    background-color: yellowgreen;
+    margin: 40px 0px;
+    background-color: green;
+    color: white;
+    padding: 8px;
+    border-radius: 8px;
+    font-weight: bold;
+    outline: 0;
+    border: 0;
 }
 .question{
     color: white;
@@ -48,4 +57,23 @@ label{
 }
 .option{
     /* background-color: aliceblue; */
+}
+
+.sideHUD input{
+    width: 150px;
+    padding: 8px 5px;
+    margin: 10px ;
+    border-radius: 8px;
+}
+.sideHUD button{
+    outline: 0;
+    border: 0;
+    width: 100px;
+    font-size: large;
+    margin: 10px ;
+    background-color: green;
+    color: white;
+    padding: 8px;
+    border-radius: 8px;
+    font-weight: bold;
 }

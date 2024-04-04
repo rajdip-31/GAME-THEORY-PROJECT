@@ -83,7 +83,7 @@ export default function Attacker({socket,roomId}) {
                 <input placeholder='Message...' onChange={(event)=>{
                     setMessage(event.target.value);
                 }}/>
-                <button className='test-btn' onClick={sendMessage}>Send</button>
+                <button className='test-btn' onClick={sendMessage}>SEND</button>
                 <h2>Message:</h2>
                 {messageRecieved}
                 </div>
