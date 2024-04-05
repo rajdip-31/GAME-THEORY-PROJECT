@@ -31,13 +31,18 @@ function Board() {
           alert("This Room is full! Try another one.");
           window.location.reload(); // reload on full room
         }
+
       })
-      
+      socket.on("success_join", () => {
+        alert("You have successfully joined the room!");
+      });
     }
       else{
         alert("Enter room number")
       }
   }
+
+
 
   if(!role || !roomId)  {
     return (

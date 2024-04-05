@@ -55,8 +55,8 @@ export default function Attacker({socket,roomId}) {
         {
         next===false?(
         <div>
-            <h1>Attacker Intro: </h1>
-            <p>Choose your attacker type</p>
+            <h1>ATTACKER'S CHOICES </h1>
+            <p>CHOOSE YOUR ATTACK TYPE</p>
             <div className='attacks'>
                 {
                     AttackList.map((item)=>{

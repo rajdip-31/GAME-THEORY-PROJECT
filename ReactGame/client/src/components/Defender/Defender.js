@@ -53,8 +53,8 @@ function Defender({socket,roomId}) {
             {
                 next===false?(
             <div>
-                <h1>Defender Intro: </h1>
-                <p>Choose your Defense type</p>
+                <h1>DEFENDER'S CHOICES </h1>
+                <p>CHOOSE YOUR DEFENCE TYPE</p>
                 <div className='defense'>
                     {
                         DefenseList.map((item)=>{

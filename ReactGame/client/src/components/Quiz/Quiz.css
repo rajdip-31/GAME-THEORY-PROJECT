@@ -8,6 +8,7 @@
 }
 h1{
     font-size: 3em;
+    margin: 60px 0px;
 }
 
 .choose-subject{
@@ -76,4 +77,43 @@ label{
     padding: 8px;
     border-radius: 8px;
     font-weight: bold;
+}
+.quiz-intro p{
+    font-weight: bold;
+    font-size: 26px;
+    padding: 10px;
+}
+.quiz-intro span{
+    display: inline-block;
+    color: red;
+    font-weight: bold;
+    font-size: 25px;
+    margin: 22px 0px;
+}
+select{
+    max-width: 400px;
+    font-size: 22px;
+    border-radius: 5px;
+    padding: 6px;
+}
+.choose-subject{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+.choose-subject label{
+    display: block;
+    font-size: 40px;
+}
+.choose-subject button{
+    width: 100px;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 5px;
+    outline: 0;
+    border: 0;
+    width: 400px;
 }

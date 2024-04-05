@@ -45,8 +45,8 @@
     
     width: 50%;
     font-weight: bold;
-    background-color: rgb(221, 255, 0);
-    
+    padding: 6px;
+    background-color: red;    
     border-radius: 10px;
   }
 
@@ -71,15 +71,15 @@
 
   .goToQz{
 
-    /* height: 40px; */
-    /* padding: 10px; */
-    color: brown;
-    background-color:rgb(255, 133, 220);
-    border: 5px solid red;
-    border-image: linear-gradient(blue, red) 1;
+    background-color:green;
+    color: white;
     cursor: pointer;
     transition: background-color 0.5s ease;
+    padding: 6px 2px;
     
+  }
+  .goToQz h3{
+    margin: 6px 0px;
   }
 
 

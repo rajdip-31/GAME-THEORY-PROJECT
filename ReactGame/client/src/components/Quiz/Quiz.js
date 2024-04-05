@@ -41,12 +41,12 @@ export default function Quiz({socket,roomId,role,selected}) {
         <div className="quiz choose-subject">
             <h1>Quiz</h1>
             <div className="quiz-intro">
-                <p>Text your opponent and negotiate one topic,after which the quiz score will determine the effectiveness of your chosen strategy in previous state
-            <br/>Note: that you both need to select same quiz subject for fair evaluation</p>
+                <p>Text your opponent and negotiate one topic,after which the quiz score will determine the effectiveness of your chosen strategy in previous stat </p> 
+                <span> Note: You both need to select same quiz subject for fair evaluation</span>
             </div>
             
-            <form onSubmit = {handleSubmit}>
-                <label htmlFor="sub">Choose Subject:</label>
+            <form  className= "choose-subject" onSubmit = {handleSubmit}>
+                <label htmlFor="sub">CHOOSE SUBJECT</label>
                 <select name="subject">
                     <option value="9">General Knowledge</option>
                     <option value="10">Entertainment: Books</option>
@@ -73,9 +73,8 @@ export default function Quiz({socket,roomId,role,selected}) {
                     <option value="31">Entertainment: Japanese Anime &amp; Manga</option>
                     <option value="32">Entertainment: Cartoon &amp; Animations</option>
                 </select>
-                <div className='subject-selection-button'>
-                    <button type='sumbit' >Go</button>
-                </div>
+               <button type='sumbit' >START THE QUIZ</button>              
+                
             </form>
 
         </div>
