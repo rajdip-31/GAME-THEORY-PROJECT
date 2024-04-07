@@ -39,7 +39,7 @@ export default function Quiz({socket,roomId,role,selected}) {
     if(!questions){
     return (
         <div className="quiz choose-subject">
-            <h1>Quiz</h1>
+            <h1>Quiz Rules</h1>
             <div className="quiz-intro">
                 <p>Text your opponent and negotiate one topic,after which the quiz score will determine the effectiveness of your chosen strategy in previous stat </p> 
                 <span> Note: You both need to select same quiz subject for fair evaluation</span>
