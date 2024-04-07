@@ -1,62 +1,69 @@
-import React, { useEffect, useState } from 'react'
-import './Engagement.css'
-export default function Engagement({socket}) {
-    const [score,setScore] = useState(null);
-    const [countDown,setCountDown] = useState(null);
-    // const [playerRole,setPlayerRole] = useState([]);
+import React, { useEffect, useState } from 'react';
+import './Engagement.css';
+
+export default function Engagement({ socket }) {
+    const [score, setScore] = useState(null);
+    const [countDown, setCountDown] = useState(null);
+    const [winner, setWinner] = useState(null); // New state for the winner
+
     let intervalId;
 
     const startInterval = () => {
-      intervalId = setInterval(() => {
-        setCountDown(prevCountDown => {
-          if (prevCountDown <= 0) {
-            socket.emit("showResult", {});
-            clearInterval(intervalId);
-            return 0;
-          } else {
-            console.log(prevCountDown);
-            return prevCountDown - 1;
-          }
-        });
-      }, 1000);
+        intervalId = setInterval(() => {
+            setCountDown(prevCountDown => {
+                if (prevCountDown <= 0) {
+                    socket.emit("showResult", {});
+                    clearInterval(intervalId);
+                    return 0;
+                } else {
+                    console.log(prevCountDown);
+                    return prevCountDown - 1;
+                }
+            });
+        }, 1000);
     };
-    
 
-    if(countDown===5){
-      startInterval();
+    if (countDown === 5) {
+        startInterval();
     }
 
-
-    useEffect( () => {
-        socket.on('showScore',(data)=>{
+    useEffect(() => {
+        socket.on('showScore', (data) => {
             setScore(data.score);
-            // setPlayerRole([...playerRole,data.role]);
         });
-        socket.on('startCountdown',(data)=>{
+        socket.on('startCountdown', (data) => {
             setCountDown(5);
             console.log("countdown triggered");
-            
         });
-        socket.on('showWinP',(data)=>{
-          if(data.status === 1 ){
-            alert(data.winP);
-          }else{
-            alert("Rival has not submitted yet");
-          }
-        })
-        
-    } , [socket])
+        socket.on('showWinP', (data) => {
+            if (data.status === 1) {
+                setWinner(data.winP); // Update winner state
+                alert(data.winP);
+            } else {
+                alert("Rival has not submitted yet");
+            }
+        });
 
-  return (
-    <div className='engagement'>
-      <p>We will show results here </p>
-      {
-        score !== null && <div>your score is {score}</div>
-      }
-      {/* <button onClick={showResults}>See results</button> */}
-      {
-        countDown!==null && <div> countDown : {countDown}</div>
-      }
-    </div>
-  )
+        // Clean up on unmount
+        return () => {
+            socket.on('showScore');
+            socket.on('startCountdown');
+            socket.on('showWinP');
+        };
+    }, [socket]);
+
+    return (
+        <div className='engagement'>
+            <p>We will show results here </p>
+            {
+                score !== null && <div>Your score is {score}</div>
+            }
+            {
+                countDown !== null && <div>Countdown: {countDown}</div>
+            }
+            {
+                winner && <div>The winner is: {winner}</div> // Display winner if available
+            }
+        </div>
+    );
 }
