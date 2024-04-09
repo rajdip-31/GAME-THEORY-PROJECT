@@ -54,18 +54,18 @@ export default function Engagement({ socket }) {
 
     return (
         <div className='engagement'>
-            <p>We will show results here </p>
+            <h1>RESULT</h1>
             {
-                score !== null && <div>Your score is {score}</div>
+                score !== null && <div className='para'>Your score is {score}</div>
             }
             {
-                countDown !== null && <div className='countDown'>Countdown: <br></br> <p id='cnt'>{countDown}</p> </div>
+                countDown !== null && <div className='countDown'>Countdown<br></br> <p id='cnt'>{countDown}</p> </div>
             }
             {
-                (winner!= null && winner>50) && <div className='finWin'>You are Winner, score:  {winner}</div> // Display winner if available
+                (winner!= null && winner>50) && <div className='finWin'>You are Winner,win score %:  {winner}</div> // Display winner if available
             }
             {
-                (winner!= null && winner<=50) && <div className='finLos'>Sorry ! you lost, score:  {winner}</div>
+                (winner!= null && winner<=50) && <div className='finLos'>Sorry! you lost, score %:  {winner}</div>
             }
         </div>
     );

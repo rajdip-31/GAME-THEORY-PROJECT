@@ -49,7 +49,7 @@ function Board() {
       <div className='board'>
           
         <h1>Welcome to the game of  </h1>
-        <h1>Strategic interaction between Attacker and Defender in Cyber-Security</h1>
+        <h1>Strategic interaction in Cyber-Security</h1>
         <div className='room'>
           <input placeholder='Enter Room ID' onChange={(event)=>{setRoomId(event.target.value);}} />
           <div className='roomButtons'>
