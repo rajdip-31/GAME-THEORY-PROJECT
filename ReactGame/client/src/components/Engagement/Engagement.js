@@ -38,7 +38,7 @@ export default function Engagement({ socket }) {
         socket.on('showWinP', (data) => {
             if (data.status === 1) {
                 setWinner(data.winP); // Update winner state
-                alert(data.winP);
+                // alert(data.winP);
             } else {
                 alert("Rival has not submitted yet");
             }
@@ -59,10 +59,13 @@ export default function Engagement({ socket }) {
                 score !== null && <div>Your score is {score}</div>
             }
             {
-                countDown !== null && <div>Countdown: {countDown}</div>
+                countDown !== null && <div className='countDown'>Countdown: <br></br> {countDown}</div>
             }
             {
-                winner && <div>The winner is: {winner}</div> // Display winner if available
+                (winner!= null && winner>50) && <div className='finWin'>You are Winner, score:  {winner}</div> // Display winner if available
+            }
+            {
+                (winner!= null && winner<=50) && <div className='finLos'>Sorry ! you lost, score:  {winner}</div>
             }
         </div>
     );

@@ -41,8 +41,8 @@ export default function Quiz({socket,roomId,role,selected}) {
         <div className="quiz choose-subject">
             <h1>Quiz Rules</h1>
             <div className="quiz-intro">
-                <p>Text your opponent and negotiate one topic,after which the quiz score will determine the effectiveness of your chosen strategy in previous stat </p> 
-                <span> Note: You both need to select same quiz subject for fair evaluation</span>
+                <p>Select options below in order to play the quiz which is will determine your effectiveness of your previously chosen domain</p> 
+                <span> Note: Choose your best option in order to score high and your share of score will determine your success probability</span>
             </div>
             
             <form  className= "choose-subject" onSubmit = {handleSubmit}>
