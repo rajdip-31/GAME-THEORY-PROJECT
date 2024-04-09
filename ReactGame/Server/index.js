@@ -118,7 +118,8 @@ io.on("connection",(socket)=>{
         })
         // console.log(data);//working = quiz request data
     })
-    socket.on('quizSubmit',(data)=>{  //calculating score
+    socket.on('quizSubmit',(data)=>{  //calculating scorenpm start
+        
         // console.log(data.answers);//working
         socket.score =  userScore(ans,data.answers) // calculating score
         console.log(`score: ${socket.score}`);

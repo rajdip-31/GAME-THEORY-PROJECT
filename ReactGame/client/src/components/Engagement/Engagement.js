@@ -59,7 +59,7 @@ export default function Engagement({ socket }) {
                 score !== null && <div>Your score is {score}</div>
             }
             {
-                countDown !== null && <div className='countDown'>Countdown: <br></br> {countDown}</div>
+                countDown !== null && <div className='countDown'>Countdown: <br></br> <p id='cnt'>{countDown}</p> </div>
             }
             {
                 (winner!= null && winner>50) && <div className='finWin'>You are Winner, score:  {winner}</div> // Display winner if available

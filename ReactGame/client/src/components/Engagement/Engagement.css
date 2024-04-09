@@ -3,11 +3,13 @@
     background-color: green;
     margin: 12px 0px;
     padding: 15px;
+    font-weight: bolder;
 }
 .finLos{
     background-color: red;
     margin: 12px 0px;
     padding: 15px;
+    font-weight: bolder;
 }
 .engagement{
     display: flex;
